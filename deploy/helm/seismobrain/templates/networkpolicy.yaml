@@ -1,0 +1,57 @@
+# File: networkpolicy.yaml
+# Description: Default-deny egress NetworkPolicy with explicit allows (T6.3)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+{{- if .Values.networkPolicy.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: seismobrain-default-deny-egress
+  labels:
+    app.kubernetes.io/name: seismobrain
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: seismobrain
+  policyTypes:
+    - Egress
+  egress:
+    # DNS within cluster
+    - to:
+        - namespaceSelector: {}
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
+    # In-cluster data plane
+    - to:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/name: seismobrain
+      ports:
+        - protocol: TCP
+          port: 5432
+        - protocol: TCP
+          port: 6379
+        - protocol: TCP
+          port: 6333
+        - protocol: TCP
+          port: 8080
+{{- if not .Values.networkPolicy.airGapped }}
+    # Non-air-gapped: allow HTTPS to configured providers only via egress gateway label
+    - to:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/component: egress-gateway
+      ports:
+        - protocol: TCP
+          port: 443
+{{- end }}
+{{- end }}

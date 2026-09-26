@@ -1,0 +1,37 @@
+# File: Caddyfile
+# Description: Edge reverse proxy with TLS and HSTS (SEC-01)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+
+{
+	email {$ACME_EMAIL:admin@localhost}
+}
+
+{$SB_DOMAIN:localhost} {
+	tls {$TLS_MODE:internal}
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options nosniff
+		Referrer-Policy no-referrer
+		X-Frame-Options DENY
+	}
+
+	handle /api/* {
+		reverse_proxy api:8080
+	}
+
+	handle /health {
+		reverse_proxy api:8080
+	}
+
+	handle {
+		reverse_proxy web:80
+	}
+}

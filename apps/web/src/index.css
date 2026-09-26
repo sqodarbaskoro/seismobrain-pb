@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 20% 98%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 199 89% 32%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 20% 93%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 20% 93%;
+  --muted-foreground: 215 16% 40%;
+  --accent: 199 89% 94%;
+  --accent-foreground: 199 89% 22%;
+  --destructive: 0 72% 42%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 152 60% 30%;
+  --success-foreground: 0 0% 100%;
+  --warning: 32 90% 40%;
+  --warning-foreground: 0 0% 100%;
+  /* Grounding/citation accent — teal, distinct from both --primary (brand/interactive,
+     blue) and --success (positive outcome, green) so a cited passage or evidence marker
+     reads as "verified provenance", not just "clickable" or "good". */
+  --cited: 174 75% 26%;
+  --cited-foreground: 0 0% 100%;
+  --border: 214 20% 88%;
+  --input: 214 20% 88%;
+  --ring: 199 89% 32%;
+  --radius: 0.5rem;
+}
+
+/* Explicit dark mode, toggled via the .dark class on <html> (see src/lib/theme.ts). */
+.dark {
+  --background: 222 30% 8%;
+  --foreground: 210 20% 96%;
+  --card: 222 28% 11%;
+  --card-foreground: 210 20% 96%;
+  --popover: 222 28% 11%;
+  --popover-foreground: 210 20% 96%;
+  --primary: 199 89% 56%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 222 22% 18%;
+  --secondary-foreground: 210 20% 96%;
+  --muted: 222 22% 18%;
+  --muted-foreground: 215 16% 65%;
+  --accent: 199 60% 20%;
+  --accent-foreground: 199 89% 88%;
+  --destructive: 0 72% 58%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 152 55% 45%;
+  --success-foreground: 0 0% 100%;
+  --warning: 32 85% 55%;
+  --warning-foreground: 0 0% 10%;
+  --cited: 174 65% 42%;
+  --cited-foreground: 222 47% 11%;
+  --border: 222 20% 22%;
+  --input: 222 20% 22%;
+  --ring: 199 89% 56%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+/* App-wide keyboard-focus ring default — individual components may still declare their own
+   focus-visible utilities, which win by Tailwind layer order; this just covers everything else
+   (raw <button>/<a>/<input> not built from a shared ui/ primitive) so focus feedback is never
+   silently missing. */
+@layer base {
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  [role="button"],
+  [tabindex]:not([tabindex="-1"]) {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}

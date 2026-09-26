@@ -1,0 +1,63 @@
+name: golden-v0
+version: "0"
+cases:
+  - id: "1"
+    query: "torque for flange P2/94"
+    query_type: identifier
+    relevant_ids: ["doc-p294"]
+    collection: ops
+    difficulty: easy
+  - id: "2"
+    query: "pump seal procedure"
+    query_type: procedural
+    relevant_ids: ["doc-seal"]
+    collection: ops
+    difficulty: medium
+  - id: "3"
+    query: "HSE lockout steps"
+    query_type: identifier
+    relevant_ids: ["doc-hse"]
+    collection: safety
+    difficulty: easy
+  - id: "4"
+    query: "telemetry host 10.0.0.15"
+    query_type: identifier
+    relevant_ids: ["doc-host"]
+    collection: ops
+    difficulty: easy
+  - id: "5"
+    query: "PPE before servicing CP-100"
+    query_type: procedural
+    relevant_ids: ["doc-ppe"]
+    collection: safety
+    difficulty: easy
+  - id: "6"
+    query: "error E-404 clear"
+    query_type: identifier
+    relevant_ids: ["doc-e404"]
+    collection: ops
+    difficulty: medium
+  - id: "7"
+    query: "well-alpha-12 isolation"
+    query_type: identifier
+    relevant_ids: ["doc-well"]
+    collection: ops
+    difficulty: easy
+  - id: "8"
+    query: "centrifugal pump overview"
+    query_type: factual
+    relevant_ids: ["doc-pump"]
+    collection: ops
+    difficulty: easy
+  - id: "9"
+    query: "gasket wear inspection"
+    query_type: procedural
+    relevant_ids: ["doc-gasket"]
+    collection: ops
+    difficulty: medium
+  - id: "10"
+    query: "safety note revision A"
+    query_type: factual
+    relevant_ids: ["doc-safety"]
+    collection: safety
+    difficulty: easy

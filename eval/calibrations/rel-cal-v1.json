@@ -1,0 +1,13 @@
+{
+  "version": "rel-cal-v1",
+  "kind": "relevance",
+  "metrics": {
+    "mae": 0.07111111111111108,
+    "n": 3.0,
+    "scale": 1.0333333333333334
+  },
+  "mapping": {
+    "scale": 1.0333333333333334,
+    "bias": 0.0
+  }
+}

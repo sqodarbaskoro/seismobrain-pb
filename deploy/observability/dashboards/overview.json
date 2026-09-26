@@ -1,0 +1,10 @@
+{
+  "title": "SeismoBrain Overview",
+  "uid": "sb-overview",
+  "panels": [
+    {"title": "Answer quality", "targets": ["sb_sentences_total", "sb_refusals_total"]},
+    {"title": "Latency by span", "targets": ["sb_chat_latency_seconds", "sb_ttft_seconds", "sb_retrieval_latency_seconds"]},
+    {"title": "Ingestion", "targets": ["sb_ingestion_jobs", "sb_ingestion_stage_seconds"]},
+    {"title": "Governance", "targets": ["sb_acl_guard_dropped_total", "sb_acl_sync_lag_seconds", "sb_external_llm_calls_total"]}
+  ]
+}

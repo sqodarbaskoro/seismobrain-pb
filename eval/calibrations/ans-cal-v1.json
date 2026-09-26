@@ -1,0 +1,13 @@
+{
+  "version": "ans-cal-v1",
+  "kind": "relevance",
+  "metrics": {
+    "mae": 0.08172043010752689,
+    "n": 3.0,
+    "scale": 0.9677419354838709
+  },
+  "mapping": {
+    "scale": 0.9677419354838709,
+    "bias": 0.0
+  }
+}

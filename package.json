@@ -1,0 +1,55 @@
+{
+  "name": "seismobrain",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SeismoBrain — self-hosted grounded RAG document intelligence platform",
+  "author": "Sri Yanto Qodarbaskoro <sqodarbaskoro@gmail.com>",
+  "homepage": "https://www.seismopilot.com",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "start:starter": "node scripts/start-starter.mjs",
+    "docker:up": "node scripts/docker-up.mjs",
+    "test": "node scripts/run-tests.mjs",
+    "lint": "npm run lint:py && npm run lint:js",
+    "lint:py": "uv run ruff check packages apps eval/runner",
+    "lint:js": "eslint scripts",
+    "typecheck": "npm run typecheck:py && npm run typecheck:ts",
+    "typecheck:py": "uv run mypy",
+    "typecheck:ts": "tsc -p tsconfig.json",
+    "doctor": "node scripts/doctor.mjs",
+    "build": "npm run generate:api --workspace @seismobrain/web && npm run build --workspace @seismobrain/web",
+    "db:migrate": "node scripts/db-migrate.mjs",
+    "keys:rotate": "node scripts/keys-rotate.mjs",
+    "sample:load": "node scripts/sample-load.mjs",
+    "calibrate": "node scripts/eval-env.mjs calibrate",
+    "eval": "node scripts/eval-env.mjs eval",
+    "eval:ci": "node scripts/eval-env.mjs ci",
+    "egress:test": "node scripts/egress-test.mjs",
+    "backup": "node scripts/backup.mjs",
+    "restore": "node scripts/restore.mjs",
+    "upgrade": "node scripts/upgrade.mjs",
+    "reindex": "node scripts/reindex.mjs",
+    "migrate:tier": "node scripts/migrate-tier.mjs",
+    "deploy:k8s": "node scripts/deploy-k8s.mjs",
+    "deploy:single-host": "node scripts/deploy-single-host.mjs",
+    "docker:build": "node scripts/docker-build.mjs",
+    "test:load": "node scripts/test-load.mjs",
+    "test:chaos": "node scripts/test-chaos.mjs",
+    "test:e2e": "npm run test:e2e --workspace @seismobrain/web --"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "22.20.3",
+    "eslint": "10.10.0",
+    "typescript": "7.0.2"
+  }
+}

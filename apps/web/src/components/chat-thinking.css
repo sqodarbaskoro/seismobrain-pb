@@ -1,0 +1,57 @@
+.chat-thinking {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.875rem;
+  background: hsl(var(--muted, 210 20% 93%) / 0.55);
+  color: hsl(var(--muted-foreground, 215 16% 40%));
+  font: 400 0.875rem / 1.5 "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+.chat-thinking__dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+  height: 1rem;
+  color: hsl(var(--warning, 32 90% 40%));
+}
+
+.chat-thinking__dots > span {
+  width: 0.3125rem;
+  height: 0.3125rem;
+  border-radius: 50%;
+  background: currentColor;
+  animation: chat-thinking-bounce 1.4s ease-in-out infinite;
+}
+
+.chat-thinking__dots > span:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.chat-thinking__dots > span:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes chat-thinking-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  30% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-thinking__dots > span {
+    animation: none;
+    opacity: 0.75;
+  }
+}

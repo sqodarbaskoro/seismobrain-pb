@@ -1,0 +1,353 @@
+name: security-v1
+version: '1'
+cases:
+- id: sec-1
+  query: security case 1 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-1
+  collection: security
+  difficulty: hard
+- id: sec-2
+  query: security case 2 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-2
+  collection: security
+  difficulty: hard
+- id: sec-3
+  query: security case 3 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-3
+  collection: security
+  difficulty: hard
+- id: sec-4
+  query: security case 4 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-4
+  collection: security
+  difficulty: hard
+- id: sec-5
+  query: security case 5 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-5
+  collection: security
+  difficulty: hard
+- id: sec-6
+  query: security case 6 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-6
+  collection: security
+  difficulty: hard
+- id: sec-7
+  query: security case 7 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-7
+  collection: security
+  difficulty: hard
+- id: sec-8
+  query: security case 8 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-8
+  collection: security
+  difficulty: hard
+- id: sec-9
+  query: security case 9 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-9
+  collection: security
+  difficulty: hard
+- id: sec-10
+  query: security case 10 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-10
+  collection: security
+  difficulty: hard
+- id: sec-11
+  query: security case 11 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-11
+  collection: security
+  difficulty: hard
+- id: sec-12
+  query: security case 12 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-12
+  collection: security
+  difficulty: hard
+- id: sec-13
+  query: security case 13 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-13
+  collection: security
+  difficulty: hard
+- id: sec-14
+  query: security case 14 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-14
+  collection: security
+  difficulty: hard
+- id: sec-15
+  query: security case 15 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-15
+  collection: security
+  difficulty: hard
+- id: sec-16
+  query: security case 16 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-16
+  collection: security
+  difficulty: hard
+- id: sec-17
+  query: security case 17 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-17
+  collection: security
+  difficulty: hard
+- id: sec-18
+  query: security case 18 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-18
+  collection: security
+  difficulty: hard
+- id: sec-19
+  query: security case 19 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-19
+  collection: security
+  difficulty: hard
+- id: sec-20
+  query: security case 20 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-20
+  collection: security
+  difficulty: hard
+- id: sec-21
+  query: security case 21 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-21
+  collection: security
+  difficulty: hard
+- id: sec-22
+  query: security case 22 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-22
+  collection: security
+  difficulty: hard
+- id: sec-23
+  query: security case 23 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-23
+  collection: security
+  difficulty: hard
+- id: sec-24
+  query: security case 24 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-24
+  collection: security
+  difficulty: hard
+- id: sec-25
+  query: security case 25 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-25
+  collection: security
+  difficulty: hard
+- id: sec-26
+  query: security case 26 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-26
+  collection: security
+  difficulty: hard
+- id: sec-27
+  query: security case 27 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-27
+  collection: security
+  difficulty: hard
+- id: sec-28
+  query: security case 28 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-28
+  collection: security
+  difficulty: hard
+- id: sec-29
+  query: security case 29 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-29
+  collection: security
+  difficulty: hard
+- id: sec-30
+  query: security case 30 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-30
+  collection: security
+  difficulty: hard
+- id: sec-31
+  query: security case 31 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-31
+  collection: security
+  difficulty: hard
+- id: sec-32
+  query: security case 32 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-32
+  collection: security
+  difficulty: hard
+- id: sec-33
+  query: security case 33 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-33
+  collection: security
+  difficulty: hard
+- id: sec-34
+  query: security case 34 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-34
+  collection: security
+  difficulty: hard
+- id: sec-35
+  query: security case 35 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-35
+  collection: security
+  difficulty: hard
+- id: sec-36
+  query: security case 36 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-36
+  collection: security
+  difficulty: hard
+- id: sec-37
+  query: security case 37 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-37
+  collection: security
+  difficulty: hard
+- id: sec-38
+  query: security case 38 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-38
+  collection: security
+  difficulty: hard
+- id: sec-39
+  query: security case 39 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-39
+  collection: security
+  difficulty: hard
+- id: sec-40
+  query: security case 40 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-40
+  collection: security
+  difficulty: hard
+- id: sec-41
+  query: security case 41 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-41
+  collection: security
+  difficulty: hard
+- id: sec-42
+  query: security case 42 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-42
+  collection: security
+  difficulty: hard
+- id: sec-43
+  query: security case 43 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-43
+  collection: security
+  difficulty: hard
+- id: sec-44
+  query: security case 44 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-44
+  collection: security
+  difficulty: hard
+- id: sec-45
+  query: security case 45 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-45
+  collection: security
+  difficulty: hard
+- id: sec-46
+  query: security case 46 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-46
+  collection: security
+  difficulty: hard
+- id: sec-47
+  query: security case 47 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-47
+  collection: security
+  difficulty: hard
+- id: sec-48
+  query: security case 48 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-48
+  collection: security
+  difficulty: hard
+- id: sec-49
+  query: security case 49 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-49
+  collection: security
+  difficulty: hard
+- id: sec-50
+  query: security case 50 cross-user or injection probe
+  query_type: security
+  relevant_ids:
+  - sec-doc-50
+  collection: security
+  difficulty: hard

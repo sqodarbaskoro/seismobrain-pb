@@ -1,0 +1,29 @@
+[project]
+name = "seismobrain-adapters"
+version = "0.0.0"
+description = "seismobrain-adapters package for SeismoBrain"
+requires-python = ">=3.12"
+dependencies = [
+    "seismobrain-core",
+    "seismobrain-models",
+    "sqlalchemy>=2.0",
+    "psycopg[binary]>=3.2",
+    "qdrant-client>=1.19",
+    "dramatiq[redis]>=1.17",
+    "redis>=5.0",
+    "boto3>=1.35",
+    "cryptography>=43.0",
+    "alembic>=1.14",
+    "httpx>=0.28",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/seismobrain_adapters"]
+
+[tool.uv.sources]
+seismobrain-core = { workspace = true }
+seismobrain-models = { workspace = true }

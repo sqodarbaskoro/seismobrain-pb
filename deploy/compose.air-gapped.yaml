@@ -1,0 +1,36 @@
+# File: compose.air-gapped.yaml
+# Description: Air-gapped overlay — force AIR_GAPPED and internal-only app nets (SEC-26)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+
+services:
+  api:
+    environment:
+      AIR_GAPPED: "true"
+    networks: [internal]
+  worker-ingest:
+    environment:
+      AIR_GAPPED: "true"
+    networks: [internal]
+  worker-default:
+    environment:
+      AIR_GAPPED: "true"
+    networks: [internal]
+  models:
+    environment:
+      AIR_GAPPED: "true"
+    networks: [internal]
+  web:
+    networks: [internal]
+
+networks:
+  internal:
+    internal: true
+  edge:
+    driver: bridge

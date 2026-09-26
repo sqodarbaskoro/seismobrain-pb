@@ -1,0 +1,25 @@
+# File: pgbouncer-config.yaml
+# Description: PgBouncer pooling profile for >4 API replicas (T6.13)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+{{- if .Values.pgbouncer.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: seismobrain-pgbouncer
+  labels:
+    app.kubernetes.io/name: seismobrain
+data:
+  pool_mode: {{ .Values.pgbouncer.poolMode | quote }}
+  max_client_conn: "200"
+  default_pool_size: "20"
+  activate_above_api_replicas: "4"
+  models_batching: {{ .Values.models.batching | quote }}
+  models_max_batch_size: {{ .Values.models.maxBatchSize | quote }}
+{{- end }}

@@ -1,0 +1,14 @@
+# File: Dockerfile.worker
+# Description: Worker image (T6.5)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+FROM python:3.12.7-slim@sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d
+WORKDIR /app
+COPY apps/worker /app
+CMD ["python", "-m", "seismobrain_worker"]

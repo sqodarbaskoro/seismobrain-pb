@@ -1,0 +1,197 @@
+# File: compose.yaml
+# Description: Team-tier Compose with infra and core profiles (PRD §16.3)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+
+name: seismobrain
+
+x-app: &app
+  env_file:
+    - path: ../.env
+      required: false
+  restart: unless-stopped
+  read_only: true
+  security_opt: ["no-new-privileges:true"]
+  cap_drop: ["ALL"]
+  tmpfs: ["/tmp"]
+  networks: [internal]
+
+networks:
+  internal:
+    internal: true
+  edge:
+    driver: bridge
+
+volumes:
+  pgdata:
+  redis:
+  qdrant:
+  objects:
+  models:
+  backups:
+
+secrets:
+  pg_password:
+    file: ./secrets/pg_password
+    # Created by `npm run setup`; not committed.
+
+services:
+  postgres:
+    image: postgres:16.10-alpine@sha256:029660641a0cfc575b14f336ba448fb8a75fd595d42e1fa316b9fb4378742297
+    profiles: [infra, core]
+    environment:
+      POSTGRES_DB: seismobrain
+      POSTGRES_USER: seismobrain
+      POSTGRES_PASSWORD_FILE: /run/secrets/pg_password
+    secrets: [pg_password]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U seismobrain"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks: [internal]
+
+  redis:
+    image: redis:7.4.2-alpine@sha256:02419de7eddf55aa5bcf49efb74e88fa8d931b4d77c07eff8a6b2144472b6952
+    profiles: [infra, core]
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes: [redis:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [internal]
+
+  qdrant:
+    image: qdrant/qdrant:v1.19.1@sha256:12364fe851b9f17356fc88189fc06d1b521262e04659ec7345975b00c9246a10
+    profiles: [infra, core]
+    volumes: [qdrant:/qdrant/storage]
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/6333'"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks: [internal]
+
+  migrate:
+    <<: *app
+    image: seismobrain/api:0.0.0@sha256:f3f35e514cf207a582e2ed249cea19e300f56299c2984df4b533295861241bbd
+    profiles: [core]
+    command: ["seismobrain", "migrate", "--bootstrap-vectors"]
+    restart: "no"
+    healthcheck:
+      test: ["CMD-SHELL", "exit 0"]
+      interval: 10s
+      timeout: 5s
+      retries: 1
+      start_period: 1s
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+
+  models:
+    <<: *app
+    image: seismobrain/models:0.0.0-cpu@sha256:4eaf86f2090d1997c9f0a9d1a91a5eafb13957f8b3fa6405be4fb2c95274c47c
+    profiles: [core]
+    volumes: [models:/models:ro]
+    healthcheck:
+      test: ["CMD", "seismobrain-models", "healthcheck"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  api:
+    <<: *app
+    image: seismobrain/api:0.0.0@sha256:f3f35e514cf207a582e2ed249cea19e300f56299c2984df4b533295861241bbd
+    profiles: [core]
+    command: ["seismobrain", "serve", "--workers", "${API_WORKERS:-2}"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+      models:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "seismobrain", "healthcheck"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  worker-ingest:
+    <<: *app
+    image: seismobrain/worker:0.0.0@sha256:3177da3d82ea5e4fae9ecff42d57d86ebb8d9b4f29e65268f401c9b6cc934ae6
+    profiles: [core]
+    command: ["seismobrain", "worker", "--queues", "ingest", "--processes", "${INGEST_PROCESSES:-2}"]
+    volumes:
+      - objects:/data/objects
+      - ${SCAN_ROOT:-./scan}:/scan:ro
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "exit 0"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  worker-default:
+    <<: *app
+    image: seismobrain/api:0.0.0@sha256:f3f35e514cf207a582e2ed249cea19e300f56299c2984df4b533295861241bbd
+    profiles: [core]
+    command: ["seismobrain", "worker", "--queues", "default"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "exit 0"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  web:
+    image: seismobrain/web:0.0.0@sha256:0d3b92d08e20ca2828480d3828fd42716d7bbf351d83324cbc4426ee2594fb47
+    profiles: [core]
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+    networks: [internal]
+    healthcheck:
+      test: ["CMD-SHELL", "exit 0"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  proxy:
+    image: caddy:2.9.1-alpine@sha256:b4e3952384eb9524a887633ce65c752dd7c71314d2c2acf98cd5c715aaa534f0
+    profiles: [core]
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./proxy/Caddyfile:/etc/caddy/Caddyfile:ro
+    depends_on:
+      api:
+        condition: service_healthy
+      web:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "caddy", "version"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    networks: [edge, internal]

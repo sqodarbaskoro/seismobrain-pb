@@ -1,0 +1,16 @@
+"""
+File: __main__.py
+Description: Module entry for python -m seismobrain_eval
+Author: Sri Yanto Qodarbaskoro
+Contact: sqodarbaskoro@gmail.com
+LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+Website: https://www.seismopilot.com
+Created: 2026-09-16
+Modified: 2026-09-16
+Version: 0.1.0
+Copyright: © 2026 Sri Yanto Qodarbaskoro
+"""
+
+from seismobrain_eval.cli import main
+
+raise SystemExit(main())

@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "gates": {
+    "G1": {
+      "delivered_unsupported": 0.01,
+      "pre_unsupported": 0.05
+    },
+    "G2": {
+      "section_acc": 0.98,
+      "page_acc": 0.94
+    },
+    "G3": {
+      "recall@10": 0.92,
+      "identifier": 0.96
+    },
+    "G4": {
+      "false_refusal": 0.03,
+      "unanswerable_compliance": 0.97
+    },
+    "G5": {
+      "unauthorized_evidence": 0
+    },
+    "G6": {
+      "p95_first_verified_s": 3.5,
+      "p95_complete_s": 10.0
+    },
+    "G7": {
+      "starter_minutes": 4.0
+    },
+    "G8": {
+      "team_minutes": 12.0
+    },
+    "G9": {
+      "positive_feedback": 0.85
+    },
+    "verifier_false_accept": 0.02,
+    "regression_points": 0.5
+  }
+}

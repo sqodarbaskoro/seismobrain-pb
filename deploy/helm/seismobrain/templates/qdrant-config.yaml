@@ -1,0 +1,20 @@
+# File: qdrant-config.yaml
+# Description: Qdrant sharding/replication ConfigMap (T6.4)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: seismobrain-qdrant-topology
+  labels:
+    app.kubernetes.io/name: seismobrain
+data:
+  shards: {{ .Values.qdrant.shards | quote }}
+  replication_factor: {{ .Values.qdrant.replicationFactor | quote }}
+  note: "Application code is shard-agnostic; Qdrant handles distribution."

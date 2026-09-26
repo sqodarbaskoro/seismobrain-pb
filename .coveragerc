@@ -1,0 +1,9 @@
+[run]
+source = packages/core/src/seismobrain_core
+omit =
+    */tests/*
+    */__pycache__/*
+
+[report]
+fail_under = 80
+show_missing = true

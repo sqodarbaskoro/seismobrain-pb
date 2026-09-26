@@ -1,0 +1,30 @@
+# File: values.ci.yaml
+# Description: CI dry-run Helm values (T6.1)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+
+replicaCount:
+  api: 1
+  workerIngest: 1
+  workerDefault: 1
+  models: 1
+  web: 1
+
+networkPolicy:
+  enabled: true
+  airGapped: true
+
+qdrant:
+  shards: 1
+  replicationFactor: 1
+
+pgbouncer:
+  enabled: true
+
+airGapped: true

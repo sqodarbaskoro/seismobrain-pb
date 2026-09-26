@@ -1,0 +1,17 @@
+# File: Chart.yaml
+# Description: SeismoBrain Production tier Helm chart (T6.1)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+
+apiVersion: v2
+name: seismobrain
+description: SeismoBrain Production tier — grounded RAG on Kubernetes
+type: application
+version: 0.1.0
+appVersion: "0.0.0"

@@ -1,0 +1,2743 @@
+name: golden-v1
+version: '1'
+cases:
+- id: '1'
+  query: identifier query 1 case-1
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-1
+  collection: ops
+  difficulty: easy
+- id: '2'
+  query: identifier query 2 case-2
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-2
+  collection: safety
+  difficulty: medium
+- id: '3'
+  query: identifier query 3 case-3
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-3
+  collection: ops
+  difficulty: hard
+- id: '4'
+  query: identifier query 4 case-4
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-4
+  collection: safety
+  difficulty: easy
+- id: '5'
+  query: identifier query 5 case-5
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-5
+  collection: ops
+  difficulty: medium
+- id: '6'
+  query: identifier query 6 case-6
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-6
+  collection: safety
+  difficulty: hard
+- id: '7'
+  query: identifier query 7 case-7
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-7
+  collection: ops
+  difficulty: easy
+- id: '8'
+  query: identifier query 8 case-8
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-8
+  collection: safety
+  difficulty: medium
+- id: '9'
+  query: identifier query 9 case-9
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-9
+  collection: ops
+  difficulty: hard
+- id: '10'
+  query: identifier query 10 case-10
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-10
+  collection: safety
+  difficulty: easy
+- id: '11'
+  query: identifier query 11 case-11
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-11
+  collection: ops
+  difficulty: medium
+- id: '12'
+  query: identifier query 12 case-12
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-12
+  collection: safety
+  difficulty: hard
+- id: '13'
+  query: identifier query 13 case-13
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-13
+  collection: ops
+  difficulty: easy
+- id: '14'
+  query: identifier query 14 case-14
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-14
+  collection: safety
+  difficulty: medium
+- id: '15'
+  query: identifier query 15 case-15
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-15
+  collection: ops
+  difficulty: hard
+- id: '16'
+  query: identifier query 16 case-16
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-16
+  collection: safety
+  difficulty: easy
+- id: '17'
+  query: identifier query 17 case-17
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-17
+  collection: ops
+  difficulty: medium
+- id: '18'
+  query: identifier query 18 case-18
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-18
+  collection: safety
+  difficulty: hard
+- id: '19'
+  query: identifier query 19 case-19
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-19
+  collection: ops
+  difficulty: easy
+- id: '20'
+  query: identifier query 20 case-20
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-20
+  collection: safety
+  difficulty: medium
+- id: '21'
+  query: identifier query 21 case-21
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-21
+  collection: ops
+  difficulty: hard
+- id: '22'
+  query: identifier query 22 case-22
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-22
+  collection: safety
+  difficulty: easy
+- id: '23'
+  query: identifier query 23 case-23
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-23
+  collection: ops
+  difficulty: medium
+- id: '24'
+  query: identifier query 24 case-24
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-24
+  collection: safety
+  difficulty: hard
+- id: '25'
+  query: identifier query 25 case-25
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-25
+  collection: ops
+  difficulty: easy
+- id: '26'
+  query: identifier query 26 case-26
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-26
+  collection: safety
+  difficulty: medium
+- id: '27'
+  query: identifier query 27 case-27
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-27
+  collection: ops
+  difficulty: hard
+- id: '28'
+  query: identifier query 28 case-28
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-28
+  collection: safety
+  difficulty: easy
+- id: '29'
+  query: identifier query 29 case-29
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-29
+  collection: ops
+  difficulty: medium
+- id: '30'
+  query: identifier query 30 case-30
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-30
+  collection: safety
+  difficulty: hard
+- id: '31'
+  query: identifier query 31 case-31
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-31
+  collection: ops
+  difficulty: easy
+- id: '32'
+  query: identifier query 32 case-32
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-32
+  collection: safety
+  difficulty: medium
+- id: '33'
+  query: identifier query 33 case-33
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-33
+  collection: ops
+  difficulty: hard
+- id: '34'
+  query: identifier query 34 case-34
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-34
+  collection: safety
+  difficulty: easy
+- id: '35'
+  query: identifier query 35 case-35
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-35
+  collection: ops
+  difficulty: medium
+- id: '36'
+  query: identifier query 36 case-36
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-36
+  collection: safety
+  difficulty: hard
+- id: '37'
+  query: identifier query 37 case-37
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-37
+  collection: ops
+  difficulty: easy
+- id: '38'
+  query: identifier query 38 case-38
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-38
+  collection: safety
+  difficulty: medium
+- id: '39'
+  query: identifier query 39 case-39
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-39
+  collection: ops
+  difficulty: hard
+- id: '40'
+  query: identifier query 40 case-40
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-40
+  collection: safety
+  difficulty: easy
+- id: '41'
+  query: identifier query 41 case-41
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-41
+  collection: ops
+  difficulty: medium
+- id: '42'
+  query: identifier query 42 case-42
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-42
+  collection: safety
+  difficulty: hard
+- id: '43'
+  query: identifier query 43 case-43
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-43
+  collection: ops
+  difficulty: easy
+- id: '44'
+  query: identifier query 44 case-44
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-44
+  collection: safety
+  difficulty: medium
+- id: '45'
+  query: identifier query 45 case-45
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-45
+  collection: ops
+  difficulty: hard
+- id: '46'
+  query: identifier query 46 case-46
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-46
+  collection: safety
+  difficulty: easy
+- id: '47'
+  query: identifier query 47 case-47
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-47
+  collection: ops
+  difficulty: medium
+- id: '48'
+  query: identifier query 48 case-48
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-48
+  collection: safety
+  difficulty: hard
+- id: '49'
+  query: identifier query 49 case-49
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-49
+  collection: ops
+  difficulty: easy
+- id: '50'
+  query: identifier query 50 case-50
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-50
+  collection: safety
+  difficulty: medium
+- id: '51'
+  query: identifier query 51 case-51
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-51
+  collection: ops
+  difficulty: hard
+- id: '52'
+  query: identifier query 52 case-52
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-52
+  collection: safety
+  difficulty: easy
+- id: '53'
+  query: identifier query 53 case-53
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-53
+  collection: ops
+  difficulty: medium
+- id: '54'
+  query: identifier query 54 case-54
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-54
+  collection: safety
+  difficulty: hard
+- id: '55'
+  query: identifier query 55 case-55
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-55
+  collection: ops
+  difficulty: easy
+- id: '56'
+  query: identifier query 56 case-56
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-56
+  collection: safety
+  difficulty: medium
+- id: '57'
+  query: identifier query 57 case-57
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-57
+  collection: ops
+  difficulty: hard
+- id: '58'
+  query: identifier query 58 case-58
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-58
+  collection: safety
+  difficulty: easy
+- id: '59'
+  query: identifier query 59 case-59
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-59
+  collection: ops
+  difficulty: medium
+- id: '60'
+  query: identifier query 60 case-60
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-60
+  collection: safety
+  difficulty: hard
+- id: '61'
+  query: identifier query 61 case-61
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-61
+  collection: ops
+  difficulty: easy
+- id: '62'
+  query: identifier query 62 case-62
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-62
+  collection: safety
+  difficulty: medium
+- id: '63'
+  query: identifier query 63 case-63
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-63
+  collection: ops
+  difficulty: hard
+- id: '64'
+  query: identifier query 64 case-64
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-64
+  collection: safety
+  difficulty: easy
+- id: '65'
+  query: identifier query 65 case-65
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-65
+  collection: ops
+  difficulty: medium
+- id: '66'
+  query: identifier query 66 case-66
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-66
+  collection: safety
+  difficulty: hard
+- id: '67'
+  query: identifier query 67 case-67
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-67
+  collection: ops
+  difficulty: easy
+- id: '68'
+  query: identifier query 68 case-68
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-68
+  collection: safety
+  difficulty: medium
+- id: '69'
+  query: identifier query 69 case-69
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-69
+  collection: ops
+  difficulty: hard
+- id: '70'
+  query: identifier query 70 case-70
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-70
+  collection: safety
+  difficulty: easy
+- id: '71'
+  query: identifier query 71 case-71
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-71
+  collection: ops
+  difficulty: medium
+- id: '72'
+  query: identifier query 72 case-72
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-72
+  collection: safety
+  difficulty: hard
+- id: '73'
+  query: identifier query 73 case-73
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-73
+  collection: ops
+  difficulty: easy
+- id: '74'
+  query: identifier query 74 case-74
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-74
+  collection: safety
+  difficulty: medium
+- id: '75'
+  query: identifier query 75 case-75
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-75
+  collection: ops
+  difficulty: hard
+- id: '76'
+  query: identifier query 76 case-76
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-76
+  collection: safety
+  difficulty: easy
+- id: '77'
+  query: identifier query 77 case-77
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-77
+  collection: ops
+  difficulty: medium
+- id: '78'
+  query: identifier query 78 case-78
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-78
+  collection: safety
+  difficulty: hard
+- id: '79'
+  query: identifier query 79 case-79
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-79
+  collection: ops
+  difficulty: easy
+- id: '80'
+  query: identifier query 80 case-80
+  query_type: identifier
+  relevant_ids:
+  - doc-identifier-80
+  collection: safety
+  difficulty: medium
+- id: '81'
+  query: procedural query 1 case-81
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-1
+  collection: ops
+  difficulty: easy
+- id: '82'
+  query: procedural query 2 case-82
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-2
+  collection: safety
+  difficulty: medium
+- id: '83'
+  query: procedural query 3 case-83
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-3
+  collection: ops
+  difficulty: hard
+- id: '84'
+  query: procedural query 4 case-84
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-4
+  collection: safety
+  difficulty: easy
+- id: '85'
+  query: procedural query 5 case-85
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-5
+  collection: ops
+  difficulty: medium
+- id: '86'
+  query: procedural query 6 case-86
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-6
+  collection: safety
+  difficulty: hard
+- id: '87'
+  query: procedural query 7 case-87
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-7
+  collection: ops
+  difficulty: easy
+- id: '88'
+  query: procedural query 8 case-88
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-8
+  collection: safety
+  difficulty: medium
+- id: '89'
+  query: procedural query 9 case-89
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-9
+  collection: ops
+  difficulty: hard
+- id: '90'
+  query: procedural query 10 case-90
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-10
+  collection: safety
+  difficulty: easy
+- id: '91'
+  query: procedural query 11 case-91
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-11
+  collection: ops
+  difficulty: medium
+- id: '92'
+  query: procedural query 12 case-92
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-12
+  collection: safety
+  difficulty: hard
+- id: '93'
+  query: procedural query 13 case-93
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-13
+  collection: ops
+  difficulty: easy
+- id: '94'
+  query: procedural query 14 case-94
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-14
+  collection: safety
+  difficulty: medium
+- id: '95'
+  query: procedural query 15 case-95
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-15
+  collection: ops
+  difficulty: hard
+- id: '96'
+  query: procedural query 16 case-96
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-16
+  collection: safety
+  difficulty: easy
+- id: '97'
+  query: procedural query 17 case-97
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-17
+  collection: ops
+  difficulty: medium
+- id: '98'
+  query: procedural query 18 case-98
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-18
+  collection: safety
+  difficulty: hard
+- id: '99'
+  query: procedural query 19 case-99
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-19
+  collection: ops
+  difficulty: easy
+- id: '100'
+  query: procedural query 20 case-100
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-20
+  collection: safety
+  difficulty: medium
+- id: '101'
+  query: procedural query 21 case-101
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-21
+  collection: ops
+  difficulty: hard
+- id: '102'
+  query: procedural query 22 case-102
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-22
+  collection: safety
+  difficulty: easy
+- id: '103'
+  query: procedural query 23 case-103
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-23
+  collection: ops
+  difficulty: medium
+- id: '104'
+  query: procedural query 24 case-104
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-24
+  collection: safety
+  difficulty: hard
+- id: '105'
+  query: procedural query 25 case-105
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-25
+  collection: ops
+  difficulty: easy
+- id: '106'
+  query: procedural query 26 case-106
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-26
+  collection: safety
+  difficulty: medium
+- id: '107'
+  query: procedural query 27 case-107
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-27
+  collection: ops
+  difficulty: hard
+- id: '108'
+  query: procedural query 28 case-108
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-28
+  collection: safety
+  difficulty: easy
+- id: '109'
+  query: procedural query 29 case-109
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-29
+  collection: ops
+  difficulty: medium
+- id: '110'
+  query: procedural query 30 case-110
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-30
+  collection: safety
+  difficulty: hard
+- id: '111'
+  query: procedural query 31 case-111
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-31
+  collection: ops
+  difficulty: easy
+- id: '112'
+  query: procedural query 32 case-112
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-32
+  collection: safety
+  difficulty: medium
+- id: '113'
+  query: procedural query 33 case-113
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-33
+  collection: ops
+  difficulty: hard
+- id: '114'
+  query: procedural query 34 case-114
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-34
+  collection: safety
+  difficulty: easy
+- id: '115'
+  query: procedural query 35 case-115
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-35
+  collection: ops
+  difficulty: medium
+- id: '116'
+  query: procedural query 36 case-116
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-36
+  collection: safety
+  difficulty: hard
+- id: '117'
+  query: procedural query 37 case-117
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-37
+  collection: ops
+  difficulty: easy
+- id: '118'
+  query: procedural query 38 case-118
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-38
+  collection: safety
+  difficulty: medium
+- id: '119'
+  query: procedural query 39 case-119
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-39
+  collection: ops
+  difficulty: hard
+- id: '120'
+  query: procedural query 40 case-120
+  query_type: procedural
+  relevant_ids:
+  - doc-procedural-40
+  collection: safety
+  difficulty: easy
+- id: '121'
+  query: table_parameter query 1 case-121
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-1
+  collection: ops
+  difficulty: easy
+- id: '122'
+  query: table_parameter query 2 case-122
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-2
+  collection: safety
+  difficulty: medium
+- id: '123'
+  query: table_parameter query 3 case-123
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-3
+  collection: ops
+  difficulty: hard
+- id: '124'
+  query: table_parameter query 4 case-124
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-4
+  collection: safety
+  difficulty: easy
+- id: '125'
+  query: table_parameter query 5 case-125
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-5
+  collection: ops
+  difficulty: medium
+- id: '126'
+  query: table_parameter query 6 case-126
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-6
+  collection: safety
+  difficulty: hard
+- id: '127'
+  query: table_parameter query 7 case-127
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-7
+  collection: ops
+  difficulty: easy
+- id: '128'
+  query: table_parameter query 8 case-128
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-8
+  collection: safety
+  difficulty: medium
+- id: '129'
+  query: table_parameter query 9 case-129
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-9
+  collection: ops
+  difficulty: hard
+- id: '130'
+  query: table_parameter query 10 case-130
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-10
+  collection: safety
+  difficulty: easy
+- id: '131'
+  query: table_parameter query 11 case-131
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-11
+  collection: ops
+  difficulty: medium
+- id: '132'
+  query: table_parameter query 12 case-132
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-12
+  collection: safety
+  difficulty: hard
+- id: '133'
+  query: table_parameter query 13 case-133
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-13
+  collection: ops
+  difficulty: easy
+- id: '134'
+  query: table_parameter query 14 case-134
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-14
+  collection: safety
+  difficulty: medium
+- id: '135'
+  query: table_parameter query 15 case-135
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-15
+  collection: ops
+  difficulty: hard
+- id: '136'
+  query: table_parameter query 16 case-136
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-16
+  collection: safety
+  difficulty: easy
+- id: '137'
+  query: table_parameter query 17 case-137
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-17
+  collection: ops
+  difficulty: medium
+- id: '138'
+  query: table_parameter query 18 case-138
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-18
+  collection: safety
+  difficulty: hard
+- id: '139'
+  query: table_parameter query 19 case-139
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-19
+  collection: ops
+  difficulty: easy
+- id: '140'
+  query: table_parameter query 20 case-140
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-20
+  collection: safety
+  difficulty: medium
+- id: '141'
+  query: table_parameter query 21 case-141
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-21
+  collection: ops
+  difficulty: hard
+- id: '142'
+  query: table_parameter query 22 case-142
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-22
+  collection: safety
+  difficulty: easy
+- id: '143'
+  query: table_parameter query 23 case-143
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-23
+  collection: ops
+  difficulty: medium
+- id: '144'
+  query: table_parameter query 24 case-144
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-24
+  collection: safety
+  difficulty: hard
+- id: '145'
+  query: table_parameter query 25 case-145
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-25
+  collection: ops
+  difficulty: easy
+- id: '146'
+  query: table_parameter query 26 case-146
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-26
+  collection: safety
+  difficulty: medium
+- id: '147'
+  query: table_parameter query 27 case-147
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-27
+  collection: ops
+  difficulty: hard
+- id: '148'
+  query: table_parameter query 28 case-148
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-28
+  collection: safety
+  difficulty: easy
+- id: '149'
+  query: table_parameter query 29 case-149
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-29
+  collection: ops
+  difficulty: medium
+- id: '150'
+  query: table_parameter query 30 case-150
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-30
+  collection: safety
+  difficulty: hard
+- id: '151'
+  query: table_parameter query 31 case-151
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-31
+  collection: ops
+  difficulty: easy
+- id: '152'
+  query: table_parameter query 32 case-152
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-32
+  collection: safety
+  difficulty: medium
+- id: '153'
+  query: table_parameter query 33 case-153
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-33
+  collection: ops
+  difficulty: hard
+- id: '154'
+  query: table_parameter query 34 case-154
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-34
+  collection: safety
+  difficulty: easy
+- id: '155'
+  query: table_parameter query 35 case-155
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-35
+  collection: ops
+  difficulty: medium
+- id: '156'
+  query: table_parameter query 36 case-156
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-36
+  collection: safety
+  difficulty: hard
+- id: '157'
+  query: table_parameter query 37 case-157
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-37
+  collection: ops
+  difficulty: easy
+- id: '158'
+  query: table_parameter query 38 case-158
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-38
+  collection: safety
+  difficulty: medium
+- id: '159'
+  query: table_parameter query 39 case-159
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-39
+  collection: ops
+  difficulty: hard
+- id: '160'
+  query: table_parameter query 40 case-160
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-40
+  collection: safety
+  difficulty: easy
+- id: '161'
+  query: table_parameter query 41 case-161
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-41
+  collection: ops
+  difficulty: medium
+- id: '162'
+  query: table_parameter query 42 case-162
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-42
+  collection: safety
+  difficulty: hard
+- id: '163'
+  query: table_parameter query 43 case-163
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-43
+  collection: ops
+  difficulty: easy
+- id: '164'
+  query: table_parameter query 44 case-164
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-44
+  collection: safety
+  difficulty: medium
+- id: '165'
+  query: table_parameter query 45 case-165
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-45
+  collection: ops
+  difficulty: hard
+- id: '166'
+  query: table_parameter query 46 case-166
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-46
+  collection: safety
+  difficulty: easy
+- id: '167'
+  query: table_parameter query 47 case-167
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-47
+  collection: ops
+  difficulty: medium
+- id: '168'
+  query: table_parameter query 48 case-168
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-48
+  collection: safety
+  difficulty: hard
+- id: '169'
+  query: table_parameter query 49 case-169
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-49
+  collection: ops
+  difficulty: easy
+- id: '170'
+  query: table_parameter query 50 case-170
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-50
+  collection: safety
+  difficulty: medium
+- id: '171'
+  query: table_parameter query 51 case-171
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-51
+  collection: ops
+  difficulty: hard
+- id: '172'
+  query: table_parameter query 52 case-172
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-52
+  collection: safety
+  difficulty: easy
+- id: '173'
+  query: table_parameter query 53 case-173
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-53
+  collection: ops
+  difficulty: medium
+- id: '174'
+  query: table_parameter query 54 case-174
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-54
+  collection: safety
+  difficulty: hard
+- id: '175'
+  query: table_parameter query 55 case-175
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-55
+  collection: ops
+  difficulty: easy
+- id: '176'
+  query: table_parameter query 56 case-176
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-56
+  collection: safety
+  difficulty: medium
+- id: '177'
+  query: table_parameter query 57 case-177
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-57
+  collection: ops
+  difficulty: hard
+- id: '178'
+  query: table_parameter query 58 case-178
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-58
+  collection: safety
+  difficulty: easy
+- id: '179'
+  query: table_parameter query 59 case-179
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-59
+  collection: ops
+  difficulty: medium
+- id: '180'
+  query: table_parameter query 60 case-180
+  query_type: table_parameter
+  relevant_ids:
+  - doc-table_parameter-60
+  collection: safety
+  difficulty: hard
+- id: '181'
+  query: cross_page query 1 case-181
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-1
+  collection: ops
+  difficulty: easy
+- id: '182'
+  query: cross_page query 2 case-182
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-2
+  collection: safety
+  difficulty: medium
+- id: '183'
+  query: cross_page query 3 case-183
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-3
+  collection: ops
+  difficulty: hard
+- id: '184'
+  query: cross_page query 4 case-184
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-4
+  collection: safety
+  difficulty: easy
+- id: '185'
+  query: cross_page query 5 case-185
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-5
+  collection: ops
+  difficulty: medium
+- id: '186'
+  query: cross_page query 6 case-186
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-6
+  collection: safety
+  difficulty: hard
+- id: '187'
+  query: cross_page query 7 case-187
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-7
+  collection: ops
+  difficulty: easy
+- id: '188'
+  query: cross_page query 8 case-188
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-8
+  collection: safety
+  difficulty: medium
+- id: '189'
+  query: cross_page query 9 case-189
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-9
+  collection: ops
+  difficulty: hard
+- id: '190'
+  query: cross_page query 10 case-190
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-10
+  collection: safety
+  difficulty: easy
+- id: '191'
+  query: cross_page query 11 case-191
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-11
+  collection: ops
+  difficulty: medium
+- id: '192'
+  query: cross_page query 12 case-192
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-12
+  collection: safety
+  difficulty: hard
+- id: '193'
+  query: cross_page query 13 case-193
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-13
+  collection: ops
+  difficulty: easy
+- id: '194'
+  query: cross_page query 14 case-194
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-14
+  collection: safety
+  difficulty: medium
+- id: '195'
+  query: cross_page query 15 case-195
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-15
+  collection: ops
+  difficulty: hard
+- id: '196'
+  query: cross_page query 16 case-196
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-16
+  collection: safety
+  difficulty: easy
+- id: '197'
+  query: cross_page query 17 case-197
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-17
+  collection: ops
+  difficulty: medium
+- id: '198'
+  query: cross_page query 18 case-198
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-18
+  collection: safety
+  difficulty: hard
+- id: '199'
+  query: cross_page query 19 case-199
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-19
+  collection: ops
+  difficulty: easy
+- id: '200'
+  query: cross_page query 20 case-200
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-20
+  collection: safety
+  difficulty: medium
+- id: '201'
+  query: cross_page query 21 case-201
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-21
+  collection: ops
+  difficulty: hard
+- id: '202'
+  query: cross_page query 22 case-202
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-22
+  collection: safety
+  difficulty: easy
+- id: '203'
+  query: cross_page query 23 case-203
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-23
+  collection: ops
+  difficulty: medium
+- id: '204'
+  query: cross_page query 24 case-204
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-24
+  collection: safety
+  difficulty: hard
+- id: '205'
+  query: cross_page query 25 case-205
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-25
+  collection: ops
+  difficulty: easy
+- id: '206'
+  query: cross_page query 26 case-206
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-26
+  collection: safety
+  difficulty: medium
+- id: '207'
+  query: cross_page query 27 case-207
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-27
+  collection: ops
+  difficulty: hard
+- id: '208'
+  query: cross_page query 28 case-208
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-28
+  collection: safety
+  difficulty: easy
+- id: '209'
+  query: cross_page query 29 case-209
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-29
+  collection: ops
+  difficulty: medium
+- id: '210'
+  query: cross_page query 30 case-210
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-30
+  collection: safety
+  difficulty: hard
+- id: '211'
+  query: cross_page query 31 case-211
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-31
+  collection: ops
+  difficulty: easy
+- id: '212'
+  query: cross_page query 32 case-212
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-32
+  collection: safety
+  difficulty: medium
+- id: '213'
+  query: cross_page query 33 case-213
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-33
+  collection: ops
+  difficulty: hard
+- id: '214'
+  query: cross_page query 34 case-214
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-34
+  collection: safety
+  difficulty: easy
+- id: '215'
+  query: cross_page query 35 case-215
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-35
+  collection: ops
+  difficulty: medium
+- id: '216'
+  query: cross_page query 36 case-216
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-36
+  collection: safety
+  difficulty: hard
+- id: '217'
+  query: cross_page query 37 case-217
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-37
+  collection: ops
+  difficulty: easy
+- id: '218'
+  query: cross_page query 38 case-218
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-38
+  collection: safety
+  difficulty: medium
+- id: '219'
+  query: cross_page query 39 case-219
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-39
+  collection: ops
+  difficulty: hard
+- id: '220'
+  query: cross_page query 40 case-220
+  query_type: cross_page
+  relevant_ids:
+  - doc-cross_page-40
+  collection: safety
+  difficulty: easy
+- id: '221'
+  query: multi_document query 1 case-221
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-1
+  collection: ops
+  difficulty: easy
+- id: '222'
+  query: multi_document query 2 case-222
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-2
+  collection: safety
+  difficulty: medium
+- id: '223'
+  query: multi_document query 3 case-223
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-3
+  collection: ops
+  difficulty: hard
+- id: '224'
+  query: multi_document query 4 case-224
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-4
+  collection: safety
+  difficulty: easy
+- id: '225'
+  query: multi_document query 5 case-225
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-5
+  collection: ops
+  difficulty: medium
+- id: '226'
+  query: multi_document query 6 case-226
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-6
+  collection: safety
+  difficulty: hard
+- id: '227'
+  query: multi_document query 7 case-227
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-7
+  collection: ops
+  difficulty: easy
+- id: '228'
+  query: multi_document query 8 case-228
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-8
+  collection: safety
+  difficulty: medium
+- id: '229'
+  query: multi_document query 9 case-229
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-9
+  collection: ops
+  difficulty: hard
+- id: '230'
+  query: multi_document query 10 case-230
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-10
+  collection: safety
+  difficulty: easy
+- id: '231'
+  query: multi_document query 11 case-231
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-11
+  collection: ops
+  difficulty: medium
+- id: '232'
+  query: multi_document query 12 case-232
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-12
+  collection: safety
+  difficulty: hard
+- id: '233'
+  query: multi_document query 13 case-233
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-13
+  collection: ops
+  difficulty: easy
+- id: '234'
+  query: multi_document query 14 case-234
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-14
+  collection: safety
+  difficulty: medium
+- id: '235'
+  query: multi_document query 15 case-235
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-15
+  collection: ops
+  difficulty: hard
+- id: '236'
+  query: multi_document query 16 case-236
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-16
+  collection: safety
+  difficulty: easy
+- id: '237'
+  query: multi_document query 17 case-237
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-17
+  collection: ops
+  difficulty: medium
+- id: '238'
+  query: multi_document query 18 case-238
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-18
+  collection: safety
+  difficulty: hard
+- id: '239'
+  query: multi_document query 19 case-239
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-19
+  collection: ops
+  difficulty: easy
+- id: '240'
+  query: multi_document query 20 case-240
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-20
+  collection: safety
+  difficulty: medium
+- id: '241'
+  query: multi_document query 21 case-241
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-21
+  collection: ops
+  difficulty: hard
+- id: '242'
+  query: multi_document query 22 case-242
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-22
+  collection: safety
+  difficulty: easy
+- id: '243'
+  query: multi_document query 23 case-243
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-23
+  collection: ops
+  difficulty: medium
+- id: '244'
+  query: multi_document query 24 case-244
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-24
+  collection: safety
+  difficulty: hard
+- id: '245'
+  query: multi_document query 25 case-245
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-25
+  collection: ops
+  difficulty: easy
+- id: '246'
+  query: multi_document query 26 case-246
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-26
+  collection: safety
+  difficulty: medium
+- id: '247'
+  query: multi_document query 27 case-247
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-27
+  collection: ops
+  difficulty: hard
+- id: '248'
+  query: multi_document query 28 case-248
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-28
+  collection: safety
+  difficulty: easy
+- id: '249'
+  query: multi_document query 29 case-249
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-29
+  collection: ops
+  difficulty: medium
+- id: '250'
+  query: multi_document query 30 case-250
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-30
+  collection: safety
+  difficulty: hard
+- id: '251'
+  query: multi_document query 31 case-251
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-31
+  collection: ops
+  difficulty: easy
+- id: '252'
+  query: multi_document query 32 case-252
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-32
+  collection: safety
+  difficulty: medium
+- id: '253'
+  query: multi_document query 33 case-253
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-33
+  collection: ops
+  difficulty: hard
+- id: '254'
+  query: multi_document query 34 case-254
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-34
+  collection: safety
+  difficulty: easy
+- id: '255'
+  query: multi_document query 35 case-255
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-35
+  collection: ops
+  difficulty: medium
+- id: '256'
+  query: multi_document query 36 case-256
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-36
+  collection: safety
+  difficulty: hard
+- id: '257'
+  query: multi_document query 37 case-257
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-37
+  collection: ops
+  difficulty: easy
+- id: '258'
+  query: multi_document query 38 case-258
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-38
+  collection: safety
+  difficulty: medium
+- id: '259'
+  query: multi_document query 39 case-259
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-39
+  collection: ops
+  difficulty: hard
+- id: '260'
+  query: multi_document query 40 case-260
+  query_type: multi_document
+  relevant_ids:
+  - doc-multi_document-40
+  collection: safety
+  difficulty: easy
+- id: '261'
+  query: follow_up query 1 case-261
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-1
+  collection: ops
+  difficulty: easy
+- id: '262'
+  query: follow_up query 2 case-262
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-2
+  collection: safety
+  difficulty: medium
+- id: '263'
+  query: follow_up query 3 case-263
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-3
+  collection: ops
+  difficulty: hard
+- id: '264'
+  query: follow_up query 4 case-264
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-4
+  collection: safety
+  difficulty: easy
+- id: '265'
+  query: follow_up query 5 case-265
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-5
+  collection: ops
+  difficulty: medium
+- id: '266'
+  query: follow_up query 6 case-266
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-6
+  collection: safety
+  difficulty: hard
+- id: '267'
+  query: follow_up query 7 case-267
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-7
+  collection: ops
+  difficulty: easy
+- id: '268'
+  query: follow_up query 8 case-268
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-8
+  collection: safety
+  difficulty: medium
+- id: '269'
+  query: follow_up query 9 case-269
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-9
+  collection: ops
+  difficulty: hard
+- id: '270'
+  query: follow_up query 10 case-270
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-10
+  collection: safety
+  difficulty: easy
+- id: '271'
+  query: follow_up query 11 case-271
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-11
+  collection: ops
+  difficulty: medium
+- id: '272'
+  query: follow_up query 12 case-272
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-12
+  collection: safety
+  difficulty: hard
+- id: '273'
+  query: follow_up query 13 case-273
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-13
+  collection: ops
+  difficulty: easy
+- id: '274'
+  query: follow_up query 14 case-274
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-14
+  collection: safety
+  difficulty: medium
+- id: '275'
+  query: follow_up query 15 case-275
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-15
+  collection: ops
+  difficulty: hard
+- id: '276'
+  query: follow_up query 16 case-276
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-16
+  collection: safety
+  difficulty: easy
+- id: '277'
+  query: follow_up query 17 case-277
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-17
+  collection: ops
+  difficulty: medium
+- id: '278'
+  query: follow_up query 18 case-278
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-18
+  collection: safety
+  difficulty: hard
+- id: '279'
+  query: follow_up query 19 case-279
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-19
+  collection: ops
+  difficulty: easy
+- id: '280'
+  query: follow_up query 20 case-280
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-20
+  collection: safety
+  difficulty: medium
+- id: '281'
+  query: follow_up query 21 case-281
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-21
+  collection: ops
+  difficulty: hard
+- id: '282'
+  query: follow_up query 22 case-282
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-22
+  collection: safety
+  difficulty: easy
+- id: '283'
+  query: follow_up query 23 case-283
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-23
+  collection: ops
+  difficulty: medium
+- id: '284'
+  query: follow_up query 24 case-284
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-24
+  collection: safety
+  difficulty: hard
+- id: '285'
+  query: follow_up query 25 case-285
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-25
+  collection: ops
+  difficulty: easy
+- id: '286'
+  query: follow_up query 26 case-286
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-26
+  collection: safety
+  difficulty: medium
+- id: '287'
+  query: follow_up query 27 case-287
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-27
+  collection: ops
+  difficulty: hard
+- id: '288'
+  query: follow_up query 28 case-288
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-28
+  collection: safety
+  difficulty: easy
+- id: '289'
+  query: follow_up query 29 case-289
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-29
+  collection: ops
+  difficulty: medium
+- id: '290'
+  query: follow_up query 30 case-290
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-30
+  collection: safety
+  difficulty: hard
+- id: '291'
+  query: follow_up query 31 case-291
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-31
+  collection: ops
+  difficulty: easy
+- id: '292'
+  query: follow_up query 32 case-292
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-32
+  collection: safety
+  difficulty: medium
+- id: '293'
+  query: follow_up query 33 case-293
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-33
+  collection: ops
+  difficulty: hard
+- id: '294'
+  query: follow_up query 34 case-294
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-34
+  collection: safety
+  difficulty: easy
+- id: '295'
+  query: follow_up query 35 case-295
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-35
+  collection: ops
+  difficulty: medium
+- id: '296'
+  query: follow_up query 36 case-296
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-36
+  collection: safety
+  difficulty: hard
+- id: '297'
+  query: follow_up query 37 case-297
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-37
+  collection: ops
+  difficulty: easy
+- id: '298'
+  query: follow_up query 38 case-298
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-38
+  collection: safety
+  difficulty: medium
+- id: '299'
+  query: follow_up query 39 case-299
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-39
+  collection: ops
+  difficulty: hard
+- id: '300'
+  query: follow_up query 40 case-300
+  query_type: follow_up
+  relevant_ids:
+  - doc-follow_up-40
+  collection: safety
+  difficulty: easy
+- id: '301'
+  query: unanswerable query 1 case-301
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '302'
+  query: unanswerable query 2 case-302
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '303'
+  query: unanswerable query 3 case-303
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '304'
+  query: unanswerable query 4 case-304
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '305'
+  query: unanswerable query 5 case-305
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '306'
+  query: unanswerable query 6 case-306
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '307'
+  query: unanswerable query 7 case-307
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '308'
+  query: unanswerable query 8 case-308
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '309'
+  query: unanswerable query 9 case-309
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '310'
+  query: unanswerable query 10 case-310
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '311'
+  query: unanswerable query 11 case-311
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '312'
+  query: unanswerable query 12 case-312
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '313'
+  query: unanswerable query 13 case-313
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '314'
+  query: unanswerable query 14 case-314
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '315'
+  query: unanswerable query 15 case-315
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '316'
+  query: unanswerable query 16 case-316
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '317'
+  query: unanswerable query 17 case-317
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '318'
+  query: unanswerable query 18 case-318
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '319'
+  query: unanswerable query 19 case-319
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '320'
+  query: unanswerable query 20 case-320
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '321'
+  query: unanswerable query 21 case-321
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '322'
+  query: unanswerable query 22 case-322
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '323'
+  query: unanswerable query 23 case-323
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '324'
+  query: unanswerable query 24 case-324
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '325'
+  query: unanswerable query 25 case-325
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '326'
+  query: unanswerable query 26 case-326
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '327'
+  query: unanswerable query 27 case-327
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '328'
+  query: unanswerable query 28 case-328
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '329'
+  query: unanswerable query 29 case-329
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '330'
+  query: unanswerable query 30 case-330
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '331'
+  query: unanswerable query 31 case-331
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '332'
+  query: unanswerable query 32 case-332
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '333'
+  query: unanswerable query 33 case-333
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '334'
+  query: unanswerable query 34 case-334
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '335'
+  query: unanswerable query 35 case-335
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '336'
+  query: unanswerable query 36 case-336
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '337'
+  query: unanswerable query 37 case-337
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '338'
+  query: unanswerable query 38 case-338
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '339'
+  query: unanswerable query 39 case-339
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '340'
+  query: unanswerable query 40 case-340
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '341'
+  query: unanswerable query 41 case-341
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '342'
+  query: unanswerable query 42 case-342
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '343'
+  query: unanswerable query 43 case-343
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '344'
+  query: unanswerable query 44 case-344
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '345'
+  query: unanswerable query 45 case-345
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '346'
+  query: unanswerable query 46 case-346
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '347'
+  query: unanswerable query 47 case-347
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '348'
+  query: unanswerable query 48 case-348
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '349'
+  query: unanswerable query 49 case-349
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '350'
+  query: unanswerable query 50 case-350
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '351'
+  query: unanswerable query 51 case-351
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '352'
+  query: unanswerable query 52 case-352
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '353'
+  query: unanswerable query 53 case-353
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '354'
+  query: unanswerable query 54 case-354
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '355'
+  query: unanswerable query 55 case-355
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: easy
+- id: '356'
+  query: unanswerable query 56 case-356
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: medium
+- id: '357'
+  query: unanswerable query 57 case-357
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: hard
+- id: '358'
+  query: unanswerable query 58 case-358
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: easy
+- id: '359'
+  query: unanswerable query 59 case-359
+  query_type: unanswerable
+  relevant_ids: []
+  collection: ops
+  difficulty: medium
+- id: '360'
+  query: unanswerable query 60 case-360
+  query_type: unanswerable
+  relevant_ids: []
+  collection: safety
+  difficulty: hard
+- id: '361'
+  query: revision_ocr_figure query 1 case-361
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-1
+  collection: ops
+  difficulty: easy
+- id: '362'
+  query: revision_ocr_figure query 2 case-362
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-2
+  collection: safety
+  difficulty: medium
+- id: '363'
+  query: revision_ocr_figure query 3 case-363
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-3
+  collection: ops
+  difficulty: hard
+- id: '364'
+  query: revision_ocr_figure query 4 case-364
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-4
+  collection: safety
+  difficulty: easy
+- id: '365'
+  query: revision_ocr_figure query 5 case-365
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-5
+  collection: ops
+  difficulty: medium
+- id: '366'
+  query: revision_ocr_figure query 6 case-366
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-6
+  collection: safety
+  difficulty: hard
+- id: '367'
+  query: revision_ocr_figure query 7 case-367
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-7
+  collection: ops
+  difficulty: easy
+- id: '368'
+  query: revision_ocr_figure query 8 case-368
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-8
+  collection: safety
+  difficulty: medium
+- id: '369'
+  query: revision_ocr_figure query 9 case-369
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-9
+  collection: ops
+  difficulty: hard
+- id: '370'
+  query: revision_ocr_figure query 10 case-370
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-10
+  collection: safety
+  difficulty: easy
+- id: '371'
+  query: revision_ocr_figure query 11 case-371
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-11
+  collection: ops
+  difficulty: medium
+- id: '372'
+  query: revision_ocr_figure query 12 case-372
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-12
+  collection: safety
+  difficulty: hard
+- id: '373'
+  query: revision_ocr_figure query 13 case-373
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-13
+  collection: ops
+  difficulty: easy
+- id: '374'
+  query: revision_ocr_figure query 14 case-374
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-14
+  collection: safety
+  difficulty: medium
+- id: '375'
+  query: revision_ocr_figure query 15 case-375
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-15
+  collection: ops
+  difficulty: hard
+- id: '376'
+  query: revision_ocr_figure query 16 case-376
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-16
+  collection: safety
+  difficulty: easy
+- id: '377'
+  query: revision_ocr_figure query 17 case-377
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-17
+  collection: ops
+  difficulty: medium
+- id: '378'
+  query: revision_ocr_figure query 18 case-378
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-18
+  collection: safety
+  difficulty: hard
+- id: '379'
+  query: revision_ocr_figure query 19 case-379
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-19
+  collection: ops
+  difficulty: easy
+- id: '380'
+  query: revision_ocr_figure query 20 case-380
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-20
+  collection: safety
+  difficulty: medium
+- id: '381'
+  query: revision_ocr_figure query 21 case-381
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-21
+  collection: ops
+  difficulty: hard
+- id: '382'
+  query: revision_ocr_figure query 22 case-382
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-22
+  collection: safety
+  difficulty: easy
+- id: '383'
+  query: revision_ocr_figure query 23 case-383
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-23
+  collection: ops
+  difficulty: medium
+- id: '384'
+  query: revision_ocr_figure query 24 case-384
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-24
+  collection: safety
+  difficulty: hard
+- id: '385'
+  query: revision_ocr_figure query 25 case-385
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-25
+  collection: ops
+  difficulty: easy
+- id: '386'
+  query: revision_ocr_figure query 26 case-386
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-26
+  collection: safety
+  difficulty: medium
+- id: '387'
+  query: revision_ocr_figure query 27 case-387
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-27
+  collection: ops
+  difficulty: hard
+- id: '388'
+  query: revision_ocr_figure query 28 case-388
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-28
+  collection: safety
+  difficulty: easy
+- id: '389'
+  query: revision_ocr_figure query 29 case-389
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-29
+  collection: ops
+  difficulty: medium
+- id: '390'
+  query: revision_ocr_figure query 30 case-390
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-30
+  collection: safety
+  difficulty: hard
+- id: '391'
+  query: revision_ocr_figure query 31 case-391
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-31
+  collection: ops
+  difficulty: easy
+- id: '392'
+  query: revision_ocr_figure query 32 case-392
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-32
+  collection: safety
+  difficulty: medium
+- id: '393'
+  query: revision_ocr_figure query 33 case-393
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-33
+  collection: ops
+  difficulty: hard
+- id: '394'
+  query: revision_ocr_figure query 34 case-394
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-34
+  collection: safety
+  difficulty: easy
+- id: '395'
+  query: revision_ocr_figure query 35 case-395
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-35
+  collection: ops
+  difficulty: medium
+- id: '396'
+  query: revision_ocr_figure query 36 case-396
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-36
+  collection: safety
+  difficulty: hard
+- id: '397'
+  query: revision_ocr_figure query 37 case-397
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-37
+  collection: ops
+  difficulty: easy
+- id: '398'
+  query: revision_ocr_figure query 38 case-398
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-38
+  collection: safety
+  difficulty: medium
+- id: '399'
+  query: revision_ocr_figure query 39 case-399
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-39
+  collection: ops
+  difficulty: hard
+- id: '400'
+  query: revision_ocr_figure query 40 case-400
+  query_type: revision_ocr_figure
+  relevant_ids:
+  - doc-revision_ocr_figure-40
+  collection: safety
+  difficulty: easy

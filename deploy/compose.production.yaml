@@ -1,0 +1,61 @@
+# File: compose.production.yaml
+# Description: Hardened single-host Compose overrides — not HA (T6.2)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+
+# Production-hardened single-host profile (NOT high availability).
+# Use with: docker compose -f compose.yaml -f compose.production.yaml
+
+x-limits: &limits
+  deploy:
+    resources:
+      limits:
+        cpus: "2.0"
+        memory: 2G
+      reservations:
+        cpus: "0.25"
+        memory: 256M
+
+services:
+  proxy:
+    <<: *limits
+    ports:
+      - "443:443"
+      - "80:80"
+    environment:
+      TLS_MODE: terminate
+      BACKUP_CRON: "0 2 * * *"
+      MONITORING: enabled
+
+  api:
+    <<: *limits
+    environment:
+      ENVIRONMENT: production
+      SB_TIER: team
+
+  models:
+    <<: *limits
+
+  worker-ingest:
+    <<: *limits
+
+  worker-default:
+    <<: *limits
+
+  web:
+    <<: *limits
+
+  postgres:
+    <<: *limits
+
+  redis:
+    <<: *limits
+
+  qdrant:
+    <<: *limits

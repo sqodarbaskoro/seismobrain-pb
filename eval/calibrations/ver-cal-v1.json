@@ -1,0 +1,12 @@
+{
+  "version": "ver-cal-v1",
+  "kind": "verifier",
+  "metrics": {
+    "accuracy": 1.0,
+    "n": 5.0,
+    "threshold": 0.6
+  },
+  "mapping": {
+    "threshold": 0.6
+  }
+}

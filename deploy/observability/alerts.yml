@@ -1,0 +1,48 @@
+# File: alerts.yml
+# Description: Baseline Prometheus alert rules (PRD §14.4)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# Created: 2026-09-16
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+
+groups:
+  - name: seismobrain
+    rules:
+      - alert: ChatLatencyHigh
+        expr: histogram_quantile(0.95, sum(rate(sb_chat_latency_seconds_bucket[5m])) by (le)) > 12
+        for: 10m
+        labels: {severity: warning}
+        annotations: {summary: Chat p95 above target}
+      - alert: RefusalSpike
+        expr: rate(sb_refusals_total{type="insufficient_evidence"}[1h]) > 2 * rate(sb_refusals_total{type="insufficient_evidence"}[7d])
+        for: 15m
+        labels: {severity: warning}
+      - alert: UnsupportedSentencesHigh
+        expr: rate(sb_sentences_total{support="unsupported",stage="final"}[1h]) > 0.05
+        for: 1h
+        labels: {severity: warning}
+      - alert: GuardDropsRising
+        expr: rate(sb_acl_guard_dropped_total[5m]) > 0
+        for: 5m
+        labels: {severity: warning}
+      - alert: AclSyncLag
+        expr: sb_acl_sync_lag_seconds > 300
+        for: 5m
+        labels: {severity: critical}
+      - alert: IndexConsistencyMismatch
+        expr: sb_index_consistency_mismatches > 0
+        for: 1m
+        labels: {severity: critical}
+      - alert: ChunkOverflow
+        expr: sb_chunk_overflow_total > 0
+        for: 0m
+        labels: {severity: critical}
+      - alert: BackupStale
+        expr: time() - sb_last_backup_success_timestamp > 93600
+        for: 1h
+        labels: {severity: warning}
+      - alert: EgressBlocked
+        expr: increase(sb_external_llm_calls_total[5m]) >= 0 and on() vector(1)
+        for: 1m
+        labels: {severity: info}
+        annotations: {summary: Monitor blocked egress via audit; external calls metric present}

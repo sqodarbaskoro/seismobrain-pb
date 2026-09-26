@@ -1,0 +1,124 @@
+# File: ci.yml
+# Description: PR CI — lint, typecheck, tests, supply chain (SEC-19 / T0a.9–T0a.10)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Created: 2026-09-16
+# Modified: 2026-09-19
+# Version: 0.2.5
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint-typecheck-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Sync Python workspace
+        run: uv sync
+
+      - name: Lint (ruff + ESLint)
+        run: npm run lint
+
+      - name: Typecheck (mypy + TypeScript)
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Core coverage gate (≥80%)
+        run: uv run pytest packages/core --cov=packages/core --cov-fail-under=80 -q
+
+  supply-chain:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Secret scanning covers the complete repository history.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: npm audit
+        run: npm audit --audit-level=high
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Sync Python workspace
+        run: uv sync
+
+      - name: pip-audit
+        # Bare `pip-audit` audits the runner system Python. Export the locked
+        # project deps and audit that requirements file instead.
+        run: |
+          uv run pip install pip-audit
+          uv export --frozen --no-emit-workspace -o /tmp/sb-requirements.txt
+          uv run pip-audit --disable-pip --require-hashes -r /tmp/sb-requirements.txt
+
+      - name: Generate SBOM with Syft
+        uses: anchore/sbom-action@v0
+        with:
+          path: .
+          format: spdx-json
+          output-file: sbom.spdx.json
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.spdx.json
+
+      - name: Trivy filesystem scan
+        # v0.28.0 pulled aquasecurity/setup-trivy@v0.2.1, which no longer resolves.
+        # v0.36.0 pins setup-trivy by commit SHA.
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+
+      - name: Gitleaks secret scan
+        uses: docker://ghcr.io/gitleaks/gitleaks:v8.29.1
+        with:
+          args: git --redact --verbose --log-opts=--all .
+
+      - name: Forbid latest image tags under deploy/
+        run: |
+          if grep -REn 'image:[[:space:]]*[^[:space:]]+:latest([[:space:]]|$)' deploy/; then
+            echo "Forbidden :latest image tag under deploy/" >&2
+            exit 1
+          fi
+          echo "OK: no :latest image tags under deploy/"

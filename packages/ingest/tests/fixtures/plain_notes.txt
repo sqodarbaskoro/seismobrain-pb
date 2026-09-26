@@ -1,0 +1,6 @@
+# Overview
+
+This is a plain text note.
+
+Step 1: Open the panel.
+NOTE: Panel screws are captive.

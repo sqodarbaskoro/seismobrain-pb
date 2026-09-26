@@ -1,0 +1,41 @@
+# File: values.yaml
+# Description: Default Helm values for Production tier (T6.1)
+# Author: Sri Yanto Qodarbaskoro
+# Contact: sqodarbaskoro@gmail.com
+# LinkedIn: https://www.linkedin.com/in/sqodarbaskoro/
+# Website: https://www.seismopilot.com
+# Created: 2026-09-16
+# Modified: 2026-09-16
+# Version: 0.1.0
+# Copyright: © 2026 Sri Yanto Qodarbaskoro
+
+replicaCount:
+  api: 2
+  workerIngest: 2
+  workerDefault: 2
+  models: 2
+  web: 2
+
+image:
+  api: seismobrain/api:0.0.0@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  worker: seismobrain/worker:0.0.0@sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  models: seismobrain/models-cpu:0.0.0@sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+  web: seismobrain/web:0.0.0@sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
+networkPolicy:
+  enabled: true
+  airGapped: false
+
+qdrant:
+  shards: 2
+  replicationFactor: 2
+
+pgbouncer:
+  enabled: true
+  poolMode: transaction
+
+models:
+  batching: true
+  maxBatchSize: 8
+
+airGapped: false
