@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import dataclasses
 import json
+import math
 import re
 import sqlite3
 from collections import Counter
@@ -199,16 +200,43 @@ class InMemorySearchIndex:
         if tokens:
             query_terms = set(tokenize_bm25_text(text))
             params = Bm25Params()
+            # Tokenize every scoped hit once up front so both the document-frequency
+            # pass and the scoring pass reuse the same counts instead of re-running
+            # the tokenizer twice per hit.
+            hit_counts = [
+                (
+                    hit,
+                    Counter(
+                        tokenize_bm25_text(
+                            f"{hit.text} {hit.document_id} {hit.metadata.get('title', '')}"
+                        )
+                    ),
+                )
+                for hit in scoped
+            ]
+            # IDF over the scoped corpus: without it, a term repeated in every chunk's
+            # contextual header (e.g. a word from the document title) scores the same
+            # as a rare, genuinely discriminative term — flattening exactly the signal
+            # the contextual header is meant to add. Standard BM25 IDF, clamped at 0
+            # so a term appearing in most of the corpus never scores negative.
+            doc_count = len(hit_counts)
+            idf: dict[str, float] = {}
+            for term in query_terms:
+                doc_freq = sum(1 for _, counts in hit_counts if term in counts)
+                idf[term] = max(
+                    0.0,
+                    math.log(1.0 + (doc_count - doc_freq + 0.5) / (doc_freq + 0.5)),
+                )
             scored: list[tuple[float, IndexedHit]] = []
-            for hit in scoped:
-                hay = f"{hit.text} {hit.document_id} {hit.metadata.get('title', '')}"
-                if not any(token in hay.casefold() for token in tokens):
+            for hit, counts in hit_counts:
+                # Token-set match, not `token in hay.casefold()`: a raw substring
+                # check matches "log" inside "catalog" or "pump" inside "pumpjack",
+                # letting unrelated documents into the ranked results.
+                if not (query_terms & counts.keys()):
                     continue
-                doc_tokens = tokenize_bm25_text(hay)
-                doc_len = len(doc_tokens)
-                counts = Counter(doc_tokens)
+                doc_len = sum(counts.values())
                 bm25_score = sum(
-                    bm25_tf(tf=counts[term], doc_len=doc_len, params=params)
+                    idf[term] * bm25_tf(tf=counts[term], doc_len=doc_len, params=params)
                     for term in query_terms
                     if term in counts
                 )
@@ -230,7 +258,12 @@ class InMemorySearchIndex:
     ) -> list[IndexedHit]:
         results: list[IndexedHit] = []
         for hit in self.hits:
-            if collection_ids and hit.collection_id not in collection_ids:
+            # `collection_ids=None` means "no scope filter" (internal/admin callers).
+            # `collection_ids=[]` must deny everything, not fall through as if no
+            # filter was requested — otherwise a caller that fails to resolve any
+            # readable collection (e.g. an ACL-scoped query with zero grants) would
+            # get every hit in the index instead of none.
+            if collection_ids is not None and hit.collection_id not in collection_ids:
                 continue
             if filters:
                 skip = False

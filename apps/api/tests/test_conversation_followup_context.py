@@ -31,6 +31,7 @@ from seismobrain_api.auth.users import InMemoryUserStore
 from seismobrain_api.config import Settings
 from seismobrain_api.container import AppContainer
 from seismobrain_api.search_index import IndexedHit
+from seismobrain_core.roles import WorkspaceRole
 
 
 @pytest.fixture
@@ -70,6 +71,12 @@ def container(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> AppContainer:
         base_url="https://openrouter.ai/api/v1",
         locality="external",
     )
+    # The chat route resolves retrieval scope from collection_access grants, so "u1"
+    # needs read access to "ops" or every question below gets a correct
+    # empty-scope refusal instead of exercising follow-up retrieval.
+    c.collection_access.map_collection("ops", "ws-ops")
+    c.collection_access.set_workspace_role("u1", "ws-ops", WorkspaceRole.VIEWER)
+    c.collection_access.grant_read("u1", "ops")
     # Route-Guide has a higher static relevance score, so an un-rewritten follow-up
     # with no discriminative keywords ("How does it work?") falls back to
     # ranking it first (search_index.py's no-token-match fallback sorts by

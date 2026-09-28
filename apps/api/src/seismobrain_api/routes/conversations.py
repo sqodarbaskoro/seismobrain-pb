@@ -201,12 +201,20 @@ def post_message(
 
         yield emit("status", {"stage": "routing"})
         yield emit("status", {"stage": "retrieving"})
+        # Never trust body.scope.collections directly: it is client-supplied and,
+        # left unfiltered, would let a caller read any collection in the index by
+        # naming it (or read every collection by omitting scope entirely — see
+        # search_index._scoped's collection_ids=None case). Resolve what this user
+        # is actually allowed to read first, then intersect.
         scope_collections = body.scope.get("collections")
-        collection_ids = (
-            [str(c) for c in scope_collections]
-            if isinstance(scope_collections, list)
-            else None
-        )
+        allowed_collection_ids = container.collection_access.list_collections(user_id)
+        if isinstance(scope_collections, list) and scope_collections:
+            requested_collection_ids = {str(c) for c in scope_collections}
+            collection_ids = [
+                c for c in allowed_collection_ids if c in requested_collection_ids
+            ]
+        else:
+            collection_ids = allowed_collection_ids
         yield emit("status", {"stage": "generating"})
         history = [m.content for m in conv.messages if m.role == "user"]
         history_summary = _history_summary(conv.messages)

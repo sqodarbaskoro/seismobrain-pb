@@ -41,6 +41,12 @@ _logger = logging.getLogger(__name__)
 _CONTENT_TOKEN = re.compile(r"[a-z0-9]+")
 _REFUSAL_LOG_TOP_N = 5
 
+# Exported so callers that must build a `citation_meta` mapping ahead of `run_doc_qa`
+# (e.g. chat_doc_qa.run_conversation_doc_qa) can call `context_builder.build_context`
+# with the exact same budget and get E-labels that agree with the ones `run_doc_qa`
+# assigns internally — otherwise a budget-dropped item shifts every later label.
+DEFAULT_MAX_CONTEXT_TOKENS = 2000
+
 
 def _token_overlap(query_tokens: frozenset[str], text: str) -> float:
     if not query_tokens:
@@ -89,7 +95,7 @@ def run_doc_qa(
     gateway: ModelGateway,
     citation_meta: Mapping[str, CitationMetadata],
     mode: GroundingMode = GroundingMode.BALANCED,
-    max_context_tokens: int = 2000,
+    max_context_tokens: int = DEFAULT_MAX_CONTEXT_TOKENS,
     history_summary: str = "",
 ) -> DocQaResult:
     """route → retrieve → guard → rerank → gate → context → generate → verify → render."""

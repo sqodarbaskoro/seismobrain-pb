@@ -106,48 +106,50 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "eval":
         if getattr(args, "release_gate", False):
-            # Offline release gate: G1–G9 smoke fixtures meet v1.0 targets.
+            # Only G3 (retrieval recall) is backed by a real, runnable evaluation
+            # today. G1, G2, G4-G9 need instrumentation this eval runner doesn't
+            # have yet: grounding accuracy over a labeled golden set (G1),
+            # citation section/page accuracy (G2), refusal-quality sampling (G4),
+            # cross-tenant leakage sampling (G5), latency percentiles under load
+            # (G6/G7/G8), and real user feedback (G9). Previously this block
+            # asserted hardcoded numbers it had just defined — a tautology that
+            # could never fail and printed "OK" for all nine gates regardless of
+            # what the code actually did. Compute the one gate we can and report
+            # the rest as unmeasured instead of rubber-stamping them.
+            dataset = _load_golden()
+            record = run_evaluation(dataset, retrieve=_default_retrieve)
+            recall_at_10 = record.metrics.get("recall@10", 0.0)
+            identifier_recall = record.metrics.get("identifier", 0.0)
             gates: dict[str, dict[str, float]] = {
-                "G1": {"delivered_unsupported": 0.01, "pre_unsupported": 0.05},
-                "G2": {"section_acc": 0.98, "page_acc": 0.94},
-                "G3": {"recall@10": 0.92, "identifier": 0.96},
-                "G4": {"false_refusal": 0.03, "unanswerable_compliance": 0.97},
-                "G5": {"unauthorized_evidence": 0},
-                "G6": {"p95_first_verified_s": 3.5, "p95_complete_s": 10.0},
-                "G7": {"starter_minutes": 4.0},
-                "G8": {"team_minutes": 12.0},
-                "G9": {"positive_feedback": 0.85},
+                "G3": {"recall@10": recall_at_10, "identifier": identifier_recall},
             }
-            verifier_false_accept = 0.02
-            regression_points = 0.5
-            assert gates["G1"]["delivered_unsupported"] <= 0.02
-            assert gates["G2"]["section_acc"] >= 0.97
-            assert gates["G3"]["recall@10"] >= 0.90
-            assert gates["G3"]["identifier"] >= 0.95
-            assert gates["G4"]["false_refusal"] <= 0.05
-            assert gates["G5"]["unauthorized_evidence"] == 0
-            assert gates["G6"]["p95_first_verified_s"] <= 4.0
-            assert gates["G7"]["starter_minutes"] <= 5.0
-            assert gates["G8"]["team_minutes"] <= 15.0
-            assert gates["G9"]["positive_feedback"] >= 0.80
-            assert verifier_false_accept <= 0.05
-            assert regression_points <= 1.0
+            unmeasured_gates = ["G1", "G2", "G4", "G5", "G6", "G7", "G8", "G9"]
+            ok = recall_at_10 >= 0.90 and identifier_recall >= 0.95
             out = root / "eval" / "results" / "release-gate.json"
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(
                 __import__("json").dumps(
                     {
-                        "ok": True,
+                        "ok": ok,
                         "gates": gates,
-                        "verifier_false_accept": verifier_false_accept,
-                        "regression_points": regression_points,
+                        "unmeasured_gates": unmeasured_gates,
                     },
                     indent=2,
                 )
                 + "\n",
                 encoding="utf-8",
             )
-            print("OK release-gate G1–G9")
+            if not ok:
+                print(
+                    f"FAIL release-gate G3 recall@10={recall_at_10:.4f} "
+                    f"identifier={identifier_recall:.4f}"
+                )
+                return 1
+            print(
+                f"OK release-gate G3 recall@10={recall_at_10:.4f} "
+                f"identifier={identifier_recall:.4f} "
+                f"(unmeasured, no instrumentation yet: {', '.join(unmeasured_gates)})"
+            )
             return 0
         if args.experiment:
             report = run_experiment(args.experiment)

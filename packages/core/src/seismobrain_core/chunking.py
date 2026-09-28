@@ -223,6 +223,10 @@ def chunk_document(
         parent_text = "\n\n".join(parent_parts)
         if token_count(parent_text) > parent_max_tokens:
             # Cap parent by taking leading sentences; never truncate mid-sentence.
+            # This does drop trailing section content from the parent chunk (the
+            # full text stays retrievable via the child chunks above), so count it
+            # rather than pretend nothing was cut — see the trailing comment this
+            # replaces, which used to force `truncations` back to 0 unconditionally.
             parent_sentences = _split_sentences(parent_text)
             capped, _ = _pack_sentences(
                 parent_sentences,
@@ -230,6 +234,7 @@ def chunk_document(
                 token_count=token_count,
             )
             parent_text = capped[0] if capped else ""
+            result.truncations += 1
         result.parents.append(
             Chunk(
                 chunk_id=parent_id,
@@ -242,6 +247,4 @@ def chunk_document(
             )
         )
 
-    # truncations always 0 by construction (split, never cut characters).
-    result.truncations = 0
     return result
