@@ -25,8 +25,8 @@ from seismobrain_adapters.models.in_process import InProcessModelGateway
 from seismobrain_api.container import AppContainer
 from seismobrain_api.provider_test import build_strategy
 from seismobrain_core.citation_renderer import CitationMetadata
-from seismobrain_core.context_builder import EvidenceItem
-from seismobrain_core.doc_qa import DocQaResult, run_doc_qa
+from seismobrain_core.context_builder import EvidenceItem, build_context
+from seismobrain_core.doc_qa import DEFAULT_MAX_CONTEXT_TOKENS, DocQaResult, run_doc_qa
 from seismobrain_core.envelope import EnvelopeCipher
 from seismobrain_core.ports.llm_provider import LLMCompletion, LLMMessage
 from seismobrain_core.router import RouteClass
@@ -73,6 +73,11 @@ def run_conversation_doc_qa(
     collection_ids: list[str] | None = None,
     history_summary: str = "",
 ) -> DocQaResult:
+    """`collection_ids` is trusted as-is: the caller (the chat route) must already
+    have resolved it to the collections this user is allowed to read, e.g. via
+    `collection_access.list_collections()` intersected with any requested scope.
+    Passing an unvalidated, client-supplied list here reopens the retrieval-time
+    ACL bypass this function's `guard` step does not independently catch."""
     candidates = _provider_candidates(container)
     if not candidates:
         return DocQaResult(
@@ -151,13 +156,15 @@ def run_conversation_doc_qa(
         assert last_error is not None
         raise last_error
 
-    # E-labels here must match context_builder.build_context's own
-    # sorted(evidence, key=lambda e: (-e.relevance, e.chunk_id)) exactly, since that
-    # is what actually assigns E1..En inside run_doc_qa.
-    ordered_for_labels = sorted(ranked_items, key=lambda e: (-e.relevance, e.chunk_id))
+    # Build the same context run_doc_qa will build internally (same items, same
+    # budget) so citation_meta's E-labels are read off the labels build_context
+    # actually assigned rather than re-derived from the pre-drop sort order. Those
+    # two can disagree whenever an item doesn't fit the token budget: build_context
+    # skips it without consuming a label, so every later item's number shifts down
+    # by one relative to a naive sorted-index labelling.
+    ctx = build_context(ranked_items, max_tokens=DEFAULT_MAX_CONTEXT_TOKENS)
     citation_meta: dict[str, CitationMetadata] = {}
-    for index, item in enumerate(ordered_for_labels):
-        label = f"E{index + 1}"
+    for label, item in ctx.blocks:
         hit = hit_by_chunk_id.get(item.chunk_id)
         citation_meta[label] = CitationMetadata(
             evidence_id=label,
@@ -180,4 +187,7 @@ def run_conversation_doc_qa(
         gateway=gateway,
         citation_meta=citation_meta,
         history_summary=history_summary,
+        # Must match the build_context() call above — that's what keeps
+        # citation_meta's E-labels aligned with the ones run_doc_qa assigns.
+        max_context_tokens=DEFAULT_MAX_CONTEXT_TOKENS,
     )
